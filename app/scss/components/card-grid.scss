@@ -1,0 +1,35 @@
+@use "../utils" as *;
+@use "../globals" as *;
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,1fr);
+    gap: rem(6) rem(20);
+    align-items: start;
+    &__subtitle {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        justify-self: start;
+        font-size: rem(13);
+        color: var(--text1);
+      
+    }
+    &__icon {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        justify-self: end;
+       
+    }
+    &__count {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        justify-self: start;
+    }
+    &__change {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+        justify-self: end;
+        align-self: center;
+    }
+}

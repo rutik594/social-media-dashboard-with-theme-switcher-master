@@ -1,0 +1,147 @@
+@use "../utils" as *;
+@use "../globals" as *;
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: rem(30);
+  @include breakpoint(medium) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include breakpoint(large) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card {
+  background-color: var(--card-bg);
+  //color: var(--text1);
+ 
+  padding: rem(25);
+  text-align: center;
+  border-radius: rem(5);
+  position: relative;
+  overflow: hidden;
+ 
+  transition: 150ms ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    background: var(--card-bg-hover);
+  }
+
+  &--facebook {
+    border-top: rem(5) solid var(--Facebook);
+  }
+  &--twitter {
+    border-top: rem(5) solid var(--Twitter);
+  }
+  &--instagram {
+    padding-top: rem(30);
+    &::before {
+        content: '';
+        position: absolute;
+        display: block;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: rem(5);
+        background: linear-gradient(
+          225deg,
+          var(--instagram-end),
+          var(--instagram-middle) 50.91%,
+          var(--instagram-start) 100%
+        );
+    }
+  }
+  
+  &--youtube {
+    border-top: rem(5) solid var(--YouTube);
+  }
+
+  &__platform {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: rem(28);
+  }
+
+  &__icon {
+    margin-right: rem(8);
+
+    img {
+      vertical-align: bottom;
+    }
+  }
+  &__username {
+    font-size: rem(12);
+    font-weight: 700;
+  color: var(--text1);
+  }
+
+  &__count {
+    color: var(--text2);
+    letter-spacing: rem(-2);
+    margin-bottom: rem(4);
+    line-height: 1;
+    font-weight: 700;
+    &--big {
+      font-size: rem(56);
+      
+    }
+    &--small {
+      font-size: rem(32);
+    }
+  }
+  &__label {
+    color: var(--text1);
+    font-size: rem(12);
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: rem(5);
+    margin-bottom: rem(25);
+  }
+  &__change {
+    font-size: rem(12);
+    font-weight: 700;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: rem(4);
+    //margin-left: rem(25);
+    //width: fit-content;
+
+    &__icon {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+      justify-self: end;
+      align-self: center;
+      //to set image vertically center
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      --up {
+      }
+      --down {
+      }
+    }
+
+    &__count {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+      justify-self: start;
+      &--up {
+        color: var(--Limegreen);
+      }
+
+      --down {
+        color: var(--Brightred);
+      }
+    }
+  }
+}
+.ch{
+    display: inline-flex;
+    justify-content: center;
+    align-content: center;
+}

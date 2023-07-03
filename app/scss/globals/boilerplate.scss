@@ -1,0 +1,17 @@
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+    font-family: var(--font-inter);
+    background-color: var(--bg);
+  
+  color: var(--text2);
+}
